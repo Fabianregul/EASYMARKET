@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background: #3498db;
+    font-size: 0.5rem;
+    padding: 10px;
+    color: #cfdef3;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    color: #333;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+}
+
+/* Encabezado de la tabla sin scroll */
+table thead {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+table thead th {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #2980b9;
+    width: 100px;
+}
+
+table thead th:nth-child(1) { width: 50px; }
+table thead th:nth-child(2) { width: 150px; }
+table thead th:nth-child(3) { width: 100px; }
+table thead th:nth-child(4) { width: 100px; }
+table thead th:nth-child(5) { width: 120px; }
+table thead th:nth-child(6) { width: 150px; }
+
+/* Contenedor de la tabla con scroll */
+.table-container {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;  /* Altura fija */
+    overflow-y: auto;  /* Scroll vertical */
+    overflow-x: hidden; /* Evita scroll horizontal */
+    border-radius: 10px;
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); */
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2); /* Transparente con efecto glass */
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    word-wrap: break-word;
+    max-width: 200px;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.15);
+    color: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+input {
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+}
+
+button {
+    background: #ff7675;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background: #d63031;
+    transform: scale(1.05);
+}
+
+/* Estilo para hacer responsiva la tabla */
+table input {
+    width: 100%;
+}
+
+#total_pagar {
+    font-weight: bold;
+    color: #0984e3;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+td button {
+    padding: 8px 12px;
+}
+
+tr {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.btn-eliminar {
+    font-size: 16px; /* Tamaño de fuente por defecto para escritorio */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 600px) {
+
+    main{
+        display: grid;
+        place-items: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    a{
+        text-decoration: none;
+        color: gray;
+        width: 35px;
+        height: 10px;
+        border-radius: 100%;
+        background: #3498db;
+        font-size: 0.5rem;
+        padding: 10px;
+        color: #cfdef3;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+
+    .cajas{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    input{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    .btn-eliminar {
+        font-size: 6px; /* Tamaño de fuente más pequeño para móviles */
+    }
+
+    a{
+        text-decoration: none;
+        color: gray;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        background: #3498db;
+        font-size: 0.5rem;
+        padding: 10px;
+        color: #cfdef3;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem; /* Ajustar tamaño de texto en pantallas pequeñas */
+    }
+
+    table thead th {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño para encabezados */
+        padding: 8px; /* Menor padding para más espacio */
+        width: 80%;
+    }
+
+    th, td {
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+    }
+
+    input, button {
+        width: 90%; /* Ajustar ancho de botones y campos de entrada */
+        padding: 8px; /* Menor padding para más espacio */
+    }
+    
+    .table-container {
+        height: 200px; /* Reducir altura en pantallas pequeñas */
+    }
+}
