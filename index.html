@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercar APP</title>
+    <link rel="stylesheet" href="mercar.css">
+</head>
+<body>
+    
+    
+
+    <main>
+        <!-- <a href="../IMC/index.html">IMC</a> -->
+        <h1>Mercar Productos</h1>
+        <div class="form">
+            <input type="text" id="producto" placeholder="Producto" required>
+            <input type="number" id="precio" placeholder="Precio" required>
+            <input type="number" id="cantidad" placeholder="Cantidad" required>
+            <button id="agregar">Agregar</button>
+        </div>
+
+        <div class="table-container">
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <h2 id="total">Total a Pagar: $0 COP</h2>
+    </main>
+
+
+    <script src="mercar.js"></script>
+</body>
+</html>
